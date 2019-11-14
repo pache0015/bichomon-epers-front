@@ -1,0 +1,9 @@
+.not-container{
+    background-color: #95a5a6;
+    width: 30%;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    overflow-y: scroll;
+}
