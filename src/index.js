@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import App from "./App";
+import Login from "./component/js/Login"
 
 ReactDOM.render(
-    <App />, document.getElementById('root'));
+    <Login/>, document.getElementById('root'));
 
 serviceWorker.unregister();
