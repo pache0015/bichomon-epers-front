@@ -8,7 +8,7 @@ class Notification extends React.Component{
     render() {
         return(
             <div className="notification">
-                <h3>{this.props.textNotification}</h3>
+                <h3>{this.props.entrenador}{this.props.textNotification}{this.props.gym}</h3>
             </div>
         )
     }

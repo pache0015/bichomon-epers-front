@@ -1,9 +1,34 @@
 .log-container{
-    width: 50%;
-    height: auto;
+    width: 60%;
+    height: 60vh;
     background-color: #2c3e50;
     border-radius: 10px;
+    color: #95a5a6;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 25vh;
+    text-align: center;
 }
 button{
     border-radius: 0px;
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.formLog{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 20%;
+}
+.titleInput{
+    margin-top: 10px;
+}
+.logInput{
+    width: 100%;
+    margin: 2px 5px 10px 0px;
+}
+.inputContainer{
+    margin-top: 5px;
+    text-align: left;
 }

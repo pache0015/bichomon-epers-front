@@ -6,6 +6,6 @@ import App from "./App";
 import Login from "./component/js/Login"
 
 ReactDOM.render(
-    <Login/>, document.getElementById('root'));
+    <App/>, document.getElementById('root'));
 
 serviceWorker.unregister();
