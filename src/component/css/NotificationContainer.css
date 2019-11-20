@@ -10,3 +10,7 @@
 .not-container h1{
     margin-bottom: 30px;
 }
+.controller-container{
+    padding-left: 10px;
+    padding-right: 10px;
+}

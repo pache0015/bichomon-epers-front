@@ -1,0 +1,20 @@
+.gym-container{
+    width: 475.8px;
+    background-color: #bdc3c7;
+    height: 318.5px;
+    float: left;
+    clear: none;
+    border: 1px solid #7f8c8d;
+
+}
+.info-gym{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.info{
+
+    margin-left: 20px;
+
+}

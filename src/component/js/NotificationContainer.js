@@ -8,14 +8,22 @@ class NotificationContainer extends React.Component{
     render() {
         return(
             <div className="not-container">
-                <h1>Notifications</h1>
-                <Notification entrenador="Ash " textNotification="fue campeon en " gym="lala"/>
-                <Notification textNotification="Estoy probando el tamaño de esta notificacion"/>
-                <Notification textNotification="Notificando"/>
-                <Notification textNotification="holaaaaa"/>
-                <Notification textNotification="Estoy probando el tamaño de esta notificacion"/>
-                <Notification textNotification="Notificando"/>
-                <Notification textNotification="holaaaaa"/>
+                <div className="controller-container">
+                    <h1>Buttons</h1>
+                    <button className="controller">Change champion</button>
+                    <button className="controller">Reset champion</button>
+                    <button className="controller">Add champion</button>
+                </div>
+                <div className="nots">
+                    <h1>Notifications</h1>
+                    <Notification entrenador="Ash " textNotification="fue campeon en " gym="lala"/>
+                    <Notification textNotification="Estoy probando el tamaño de esta notificacion"/>
+                    <Notification textNotification="Notificando"/>
+                    <Notification textNotification="holaaaaa"/>
+                    <Notification textNotification="Estoy probando el tamaño de esta notificacion"/>
+                    <Notification textNotification="Notificando"/>
+                    <Notification textNotification="holaaaaa"/>
+                </div>
             </div>
         )
     }

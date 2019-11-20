@@ -1,11 +1,16 @@
 import React from 'react';
 import '../css/MapWorld.css';
+import Gym from "./gym";
 
 class MapWorld extends React.Component{
     render() {
         return(
             <div className="map-word">
-                <h1>MapWorld</h1>
+                <Gym nombre="El gym piola"/>
+                <Gym nombre="El gym piola"/>
+                <Gym nombre="El gym piola"/>
+                <Gym nombre="El gym piola"/>
+
             </div>
         )
     }
