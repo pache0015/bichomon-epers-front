@@ -8,8 +8,8 @@ import 'firebase/database';
 
 function App() {
 
-  this.app = firebase.initializeApp(configDB);
-  this.db = this.app.database().ref().child('vilmaPalma')
+  firebase.initializeApp(configDB);
+  firebase.database()
   return (
     <div className="App">
 
