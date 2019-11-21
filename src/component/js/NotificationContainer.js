@@ -23,7 +23,7 @@ class NotificationContainer extends React.Component{
                     <input className="gym-selected" placeholder="gym selected"/>
                     <button className="controller">Change champion</button>
                     <button className="controller" onClick={this.handleResetAll}>Reset ALL</button>
-                    <button className="controller">Add champion</button>
+                    <button className="controller" onClick={this.props.modalCallback}>Add Gym</button>
                 </div>
                 <div className="nots">
                     <h1>Notifications</h1>
