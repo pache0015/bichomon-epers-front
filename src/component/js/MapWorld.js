@@ -2,8 +2,6 @@ import React from 'react';
 import '../css/MapWorld.css';
 import Gym from "./gym";
 import * as firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
 
 class MapWorld extends React.Component{
     constructor(props) {

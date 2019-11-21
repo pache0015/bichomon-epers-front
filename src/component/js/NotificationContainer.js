@@ -1,9 +1,19 @@
 import React from 'react';
 import '../css/NotificationContainer.css';
 import Notification from "./Notification";
+import * as firebase from "firebase/app";
+
 
 class NotificationContainer extends React.Component{
-
+    constructor(props) {
+        super(props)
+        this.handleResetAll = this.handleResetAll.bind(this)
+    }
+    handleResetAll() {
+        if(window.confirm("Tas seguro ameo?")) {
+            firebase.database().ref('gyms').set([]);
+        }
+    }
 
     render() {
         return(
@@ -12,7 +22,7 @@ class NotificationContainer extends React.Component{
                     <h1>Buttons</h1>
                     <input className="gym-selected" placeholder="gym selected"/>
                     <button className="controller">Change champion</button>
-                    <button className="controller">Reset gym</button>
+                    <button className="controller" onClick={this.handleResetAll}>Reset ALL</button>
                     <button className="controller">Add champion</button>
                 </div>
                 <div className="nots">
