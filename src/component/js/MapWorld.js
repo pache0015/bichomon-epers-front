@@ -12,8 +12,7 @@ class MapWorld extends React.Component{
         this.handleGyms = this.handleGyms.bind(this)
         const gymRef = firebase.database().ref('gyms');
         gymRef.on('value', (snapshot) => {
-            console.log(snapshot.val());
-            const gyms = snapshot.val() ? JSON.parse(snapshot.val()) : []
+            const gyms = snapshot.val() ? Object.values(snapshot.val()) : []
             this.handleGyms(gyms);
         });
     }
@@ -24,7 +23,7 @@ class MapWorld extends React.Component{
     }
     render() {
         const gymComponents = this.state.gyms.map((gym, i) => {
-            return <Gym nombre={gym.nombre} bicho={gym.bicho} entrenador={gym.entrenador} key={i}/>
+            return <Gym nombre={gym.gimnasio} bicho={gym.bicho} entrenador={gym.entrenador} key={i}/>
         })
 
         return(

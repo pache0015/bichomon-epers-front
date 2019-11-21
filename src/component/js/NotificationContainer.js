@@ -11,7 +11,7 @@ class NotificationContainer extends React.Component{
     }
     handleResetAll() {
         if(window.confirm("Tas seguro ameo?")) {
-            firebase.database().ref('gyms').set([]);
+            firebase.database().ref('gyms').set({});
         }
     }
 
