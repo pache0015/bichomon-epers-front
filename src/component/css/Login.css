@@ -1,32 +1,42 @@
 .log-container{
-    width: 60%;
-    height: 60vh;
-    background-color: #2c3e50;
+    width: 40%;
+    height: 150px;
+    background-color: #bdc3c7;
     border-radius: 10px;
-    color: #95a5a6;
-    margin-right: 20%;
-    margin-left: 20%;
-    margin-top: 25vh;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15vh;
     text-align: center;
 }
 button{
-    border-radius: 0px;
-    width: 100%;
+    width: 200px;
     height: 30px;
     margin-top: 5px;
     margin-bottom: 5px;
+    background-color: #16a085;
+    border: 0px;
 }
 .formLog{
     width: 80%;
     margin-left: 10%;
-    margin-right: 20%;
+    display: flex;
+    justify-content: center;
+
+}
+.errorLog{
+    width: 100%;
+    color: red;
 }
 .titleInput{
     margin-top: 10px;
 }
 .logInput{
-    width: 100%;
-    margin: 2px 5px 10px 0px;
+    width: 200px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25px;
+    border: 1.5px solid #16a085;
 }
 .inputContainer{
     margin-top: 5px;
