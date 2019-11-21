@@ -14,3 +14,11 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.gym-selected{
+
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 80%;
+    height: 20px;
+}

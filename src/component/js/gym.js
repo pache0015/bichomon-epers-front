@@ -15,7 +15,7 @@ class Gym extends React.Component{
     render() {
         return(
             <div className="gym-container">
-                {this.props.nombre}
+                <h1>{this.props.nombre}</h1>
                 <div className="info-gym">
                     <label className="info">Nombre: {this.state.error}</label>
                     <label className="info">Bicho campeon: {this.state.error}</label>
