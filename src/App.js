@@ -13,7 +13,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             showModal: false,
-            showModalLogin: true,   
+            showModalLogin: true,
             entrenador: '',
             bicho: '',
             gimnasio: '',
