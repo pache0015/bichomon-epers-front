@@ -13,6 +13,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             showModal: false,
+            showModalLogin: true,   
             entrenador: '',
             bicho: '',
             gimnasio: '',
@@ -86,9 +87,21 @@ class App extends React.Component {
                             Agrega un nuevo Gym
                         </div>
                         <div className="body">
-                            <input onChange={this.handleGimnasio} value={this.state.gimnasio} className="modal-input" type="text" placeholder="Nombre del gimnasio"/>
-                            <input onChange={this.handleBicho} value={this.state.bicho} className="modal-input" type="text" placeholder="Nombre del bicho campeon"/>
-                            <input onChange={this.handleEntrenador} value={this.state.entrenador} className="modal-input" type="text" placeholder="Nombre del entrenador campeon"/>
+                            <input onChange={this.handleGimnasio}
+                                   value={this.state.gimnasio}
+                                   className="modal-input"
+                                   type="text"
+                                   placeholder="Nombre del gimnasio"/>
+                            <input onChange={this.handleBicho}
+                                   value={this.state.bicho}
+                                   className="modal-input"
+                                   type="text"
+                                   placeholder="Nombre del bicho campeon"/>
+                            <input onChange={this.handleEntrenador}
+                                   value={this.state.entrenador}
+                                   className="modal-input"
+                                   type="text"
+                                   placeholder="Nombre del entrenador campeon"/>
                             <button onClick={this.submit} className="modal-button" type="submit">Agregar</button>
                         </div>
                     </div>
