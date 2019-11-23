@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/NotificationContainer.css';
 import Notification from "./Notification";
 import * as firebase from "firebase/app";
-import Gym from "./gym";
 
 
 class NotificationContainer extends React.Component{
@@ -12,8 +11,9 @@ class NotificationContainer extends React.Component{
             notifications: [],
         };
         this.handleResetAll = this.handleResetAll.bind(this);
-        this.changeChampion =  this.changeChampion.bind(this);
+        this.generateNotification =  this.generateNotification.bind(this);
         this.pullNotification = this.pullNotification.bind(this);
+        this.addGym = this.addGym.bind(this);
 
 
         //=======> ESTO HAY QUE SACARLO DESPUES <==========
@@ -30,7 +30,7 @@ class NotificationContainer extends React.Component{
             firebase.database().ref('gyms').set({});
         }
     }
-    changeChampion(action){
+    generateNotification(action){
         firebase.database().ref('notifications').push({
             usuario: localStorage.getItem('user'),
             accion: action,
@@ -38,12 +38,16 @@ class NotificationContainer extends React.Component{
         }, () => this.pullNotification())
     };
     pullNotification(){
-        const notsRef = firebase.database().ref('notification');
+        const notsRef = firebase.database().ref('notifications');
         notsRef.on('value', (snapshot) => {
-            const notifications = snapshot.val() ? Object.values(snapshot.val()) : []
+            const notifications = snapshot.val() ? Object.values(snapshot.val()) : [];
             this.setState({notifications:notifications})
         })
 
+    }
+    addGym(){
+        this.props.modalCallback()
+        this.generateNotification("añadio un gym")
     }
 
     render() {
@@ -60,15 +64,14 @@ class NotificationContainer extends React.Component{
                     <input className="gym-selected"
                            placeholder="gym selected"/>
                     <button className="controller"
-                            onClick={() => this.changeChampion("cambio campeon")}>
+                            onClick={() => this.generateNotification("cambio campeon")}>
                         Change champion
                     </button>
                     <button className="controller"
                             value={"reseteo todo"} onClick={this.handleResetAll}>
                         Reset ALL</button>
                     <button className="controller"
-                            value={"añadio un gym"}
-                            onClick={this.props.modalCallback}>
+                            onClick={() =>this.addGym()}>
                         Add Gym
                     </button>
                 </div>
