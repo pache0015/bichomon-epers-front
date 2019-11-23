@@ -10,7 +10,7 @@ class NotificationContainer extends React.Component{
         super(props);
         this.state = {
             notifications: [],
-        }
+        };
         this.handleResetAll = this.handleResetAll.bind(this);
         this.changeChampion =  this.changeChampion.bind(this);
         this.pullNotification = this.pullNotification.bind(this);
@@ -57,10 +57,20 @@ class NotificationContainer extends React.Component{
             <div className="not-container">
                 <div className="controller-container">
                     <h1>Buttons</h1>
-                    <input className="gym-selected" placeholder="gym selected"/>
-                    <button className="controller" onClick={() => this.changeChampion("cambio campeon")}>Change champion</button>
-                    <button className="controller" value={"reseteo todo"} onClick={this.handleResetAll}>Reset ALL</button>
-                    <button className="controller" value={"añadio un gym"} onClick={this.props.modalCallback}>Add Gym</button>
+                    <input className="gym-selected"
+                           placeholder="gym selected"/>
+                    <button className="controller"
+                            onClick={() => this.changeChampion("cambio campeon")}>
+                        Change champion
+                    </button>
+                    <button className="controller"
+                            value={"reseteo todo"} onClick={this.handleResetAll}>
+                        Reset ALL</button>
+                    <button className="controller"
+                            value={"añadio un gym"}
+                            onClick={this.props.modalCallback}>
+                        Add Gym
+                    </button>
                 </div>
                 <div className="nots">
                     <h1>Notifications</h1>
