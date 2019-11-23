@@ -9,7 +9,7 @@ class NotificationContainer extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            notifications: '',
+            notifications: [],
         }
         this.handleResetAll = this.handleResetAll.bind(this);
         this.changeChampion =  this.changeChampion.bind(this);
@@ -21,44 +21,50 @@ class NotificationContainer extends React.Component{
         localStorage.setItem('gym', 'un gym piola');
 
     }
+    componentDidMount() {
+        this.pullNotification()
+    }
+
     handleResetAll() {
         if(window.confirm("Tas seguro ameo?")) {
             firebase.database().ref('gyms').set({});
         }
     }
-    changeChampion(value){
-
-        firebase.database().ref('notification').push({
+    changeChampion(action){
+        firebase.database().ref('notifications').push({
             usuario: localStorage.getItem('user'),
-            accion: value,
+            accion: action,
             gym: localStorage.getItem('gym')
         }, () => this.pullNotification())
     };
     pullNotification(){
         const notsRef = firebase.database().ref('notification');
-        nostRef.on('value', (snapshot) => {
+        notsRef.on('value', (snapshot) => {
             const notifications = snapshot.val() ? Object.values(snapshot.val()) : []
-            this.setState({notification:notifications})
+            this.setState({notifications:notifications})
         })
 
     }
 
     render() {
-        const notificationComponents = this.pullNotification.map((notification, i) => {
-            return <Notification entrenador={notification.usuario} textNotification={notification.accion} gym={notification.gym} key={i}/>
-        })
+        const notifications = this.state.notifications.map((notification, i) => {
+            return <Notification entrenador={notification.usuario}
+                                 textNotification={notification.accion}
+                                 gym={notification.gym}
+                                 key={i}/>
+        });
         return(
             <div className="not-container">
                 <div className="controller-container">
                     <h1>Buttons</h1>
                     <input className="gym-selected" placeholder="gym selected"/>
-                    <button className="controller" value={"cambio campeon"} onClick={() => changeChampion(value())}>Change champion</button>
+                    <button className="controller" onClick={() => this.changeChampion("cambio campeon")}>Change champion</button>
                     <button className="controller" value={"reseteo todo"} onClick={this.handleResetAll}>Reset ALL</button>
                     <button className="controller" value={"añadio un gym"} onClick={this.props.modalCallback}>Add Gym</button>
                 </div>
                 <div className="nots">
                     <h1>Notifications</h1>
-                    {notificationComponents}
+                    {notifications}
 
 
                 </div>
