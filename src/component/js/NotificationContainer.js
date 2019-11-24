@@ -14,6 +14,7 @@ class NotificationContainer extends React.Component{
         this.generateNotification =  this.generateNotification.bind(this);
         this.pullNotification = this.pullNotification.bind(this);
         this.addGym = this.addGym.bind(this);
+        this.reset = this.reset.bind(this);
 
 
         //=======> ESTO HAY QUE SACARLO DESPUES <==========
@@ -46,8 +47,13 @@ class NotificationContainer extends React.Component{
 
     }
     addGym(){
-        this.props.modalCallback()
+        this.props.modalCallback();
         this.generateNotification("añadio un gym")
+        localStorage.setItem('gym', '');
+    }
+    reset(){
+        this.handleResetAll()
+        this.generateNotification("reseteo todo")
     }
 
     render() {
@@ -68,7 +74,7 @@ class NotificationContainer extends React.Component{
                         Change champion
                     </button>
                     <button className="controller"
-                            value={"reseteo todo"} onClick={this.handleResetAll}>
+                            value={"reseteo todo"} onClick={() => this.reset()}>
                         Reset ALL</button>
                     <button className="controller"
                             onClick={() =>this.addGym()}>
